@@ -4,7 +4,7 @@
   <url>
     <loc>http://peterlavalle.com/2017/03/15/OpenVPN-on-a-Pi3/</loc>
     
-    <lastmod>2017-03-15T21:30:21.268Z</lastmod>
+    <lastmod>2017-03-15T23:15:18.239Z</lastmod>
     
   </url>
   
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/03/09/Switched-Themes/</loc>
+    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
     
     <lastmod>2017-03-14T09:33:46.642Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2015/11/12/Swag/</loc>
+    <loc>http://peterlavalle.com/2016/03/09/Switched-Themes/</loc>
     
     <lastmod>2017-03-14T09:33:46.642Z</lastmod>
     
@@ -93,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
+    <loc>http://peterlavalle.com/2015/11/12/Swag/</loc>
     
     <lastmod>2017-03-14T09:33:46.642Z</lastmod>
     
@@ -101,6 +101,13 @@
   
   <url>
     <loc>http://peterlavalle.com/2016/03/12/Samon-2/</loc>
+    
+    <lastmod>2017-03-14T09:33:46.632Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
     
     <lastmod>2017-03-14T09:33:46.632Z</lastmod>
     
@@ -121,9 +128,9 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
+    <loc>http://peterlavalle.com/2016/07/19/Hg-SubRepos/</loc>
     
-    <lastmod>2017-03-14T09:33:46.632Z</lastmod>
+    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
     
   </url>
   
@@ -149,28 +156,14 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/07/19/Hg-SubRepos/</loc>
+    <loc>http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/</loc>
     
-    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
+    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://peterlavalle.com/2016/08/11/Atom-Macros/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/</loc>
     
     <lastmod>2017-03-14T09:33:46.612Z</lastmod>
     
@@ -191,6 +184,13 @@
   </url>
   
   <url>
+    <loc>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</loc>
+    
+    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://peterlavalle.com/SPACE-SHIPs/index.html</loc>
     
     <lastmod>2017-03-14T09:33:46.482Z</lastmod>
@@ -205,13 +205,6 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/BENCHMARKS/qham/sophos.extreme.html</loc>
-    
-    <lastmod>2017-03-14T09:33:46.472Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://peterlavalle.com/External-Presence/index.html</loc>
     
     <lastmod>2017-03-14T09:33:46.472Z</lastmod>
@@ -219,14 +212,21 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/BENCHMARKS/qham/no-ant-virus.basic.html</loc>
+    <loc>http://peterlavalle.com/BENCHMARKS/qham/sophos.extreme.html</loc>
+    
+    <lastmod>2017-03-14T09:33:46.472Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/BENCHMARKS/qham/no-ant-virus.extreme.html</loc>
     
     <lastmod>2017-03-14T09:33:46.462Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/BENCHMARKS/qham/no-ant-virus.extreme.html</loc>
+    <loc>http://peterlavalle.com/BENCHMARKS/qham/no-ant-virus.basic.html</loc>
     
     <lastmod>2017-03-14T09:33:46.462Z</lastmod>
     
