@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: Pi3 | Peter&#39;s Fascinations</title>
+    <title>OpenVPN on a Pi3 | Peter&#39;s Fascinations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Peter's Fascinations">
-<meta property="og:url" content="http://peterlavalle.com/tags/Pi3/index.html">
+        <meta name="keywords" content="raspberry-pi,Pi3,OpenVPN" />
+    
+    <meta name="description" content="Have I mentioned that I own a Pi3?
+Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
+BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenVPN on a Pi3">
+<meta property="og:url" content="http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/index.html">
 <meta property="og:site_name" content="Peter's Fascinations">
+<meta property="og:description" content="Have I mentioned that I own a Pi3?
+Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
+BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+<meta property="og:image" content="http://www.pivpn.io/images/pivpn_logo.png">
+<meta property="og:updated_time" content="2017-03-16T10:15:21.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Peter's Fascinations">
+<meta name="twitter:title" content="OpenVPN on a Pi3">
+<meta name="twitter:description" content="Have I mentioned that I own a Pi3?
+Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
+BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+<meta name="twitter:image" content="http://www.pivpn.io/images/pivpn_logo.png">
     
 
     
@@ -125,74 +139,133 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Pi3</em>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-OpenVPN-on-a-Pi3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/03/14/OpenVPN-on-a-Pi3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://www.pivpn.io/images/pivpn_logo.png)" alt="OpenVPN on a Pi3" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2017-03-14T00:00:00.000Z" itemprop="datePublished">2017-03-14</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2017/03/14/OpenVPN-on-a-Pi3/">OpenVPN on a Pi3</a>
+        OpenVPN on a Pi3
         </h1>
     
 
-        <p class="article-excerpt">
-            Have I mentioned that I own a Pi3?
-Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
-BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv
-        </p>
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/03/14/OpenVPN-on-a-Pi3/" class="article-date">
+    <time datetime="2017-03-14T00:00:00.000Z" itemprop="datePublished">2017-03-14</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenVPN/">OpenVPN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pi3/">Pi3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry-pi/">raspberry-pi</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Have I mentioned that I own a Pi3?</p>
+<p>Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.</p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Virtual Private Networks (hereafter VPNs) reffer to a client-server system where a client uses an existing network to route all of its traffice through a server.
+The advantage is that, if the client is in an insecure location (Bar!) they can access resources (build servers!) that no sane person would expose to the public internet.</p>
+<p>Also; if the client is in a country with draconian laws, (or a poor NetFlic catalouge) but the server is in a more enligthened region; the setup allows someone to masquerade as being in the other location.</p>
+<p>My chief interest is in being able to access BitBucket/Jenins/GitLab/GitHub/Kallithea et al when I’m in a coffee shop.
+There’s a mountain of tweaks and voodoo that you can setup as well for this - but it’s beyond my interest in this case.</p>
+<h2 id="VPN-on-the-Pi3"><a href="#VPN-on-the-Pi3" class="headerlink" title="VPN on the Pi3"></a>VPN on the Pi3</h2><p>I have a Raspberry Pi3 with Jesse-Lite installed - so <a href="http://www.pivpn.io/" target="_blank" rel="external">I was all set for these instructions.</a>
+The script worked as described, my only deviation was sending the traffic through TCP port 80.
+(I don’t know what I’m doing, but I do know that UDP didn’t work)</p>
+<p>In the real world you should never ever ever run a script from the internet without checking it.</p>
+<p>Following the setup of the server software, I logged into my (podunk) router and directed the FireWall to assign port 80 to my Pi3, and to use a static IP for the Pi3.
+Pretty standard router stuff which never follows a standard UI - so I’m not posting mine here.</p>
+<h2 id="VPN-Client-on-my-Ubuntu-laptop"><a href="#VPN-Client-on-my-Ubuntu-laptop" class="headerlink" title="VPN Client on my Ubuntu laptop"></a>VPN Client on my Ubuntu laptop</h2><p>On my Pi3 - I used the new <code>pivpn add</code> command to create a new VPN … account?
+This popped out a single config file - very nice - which I copied to my laptop.</p>
+<p>Likely - there will be GUI/system-tray clients for Windows and OsX; in Linux land we use shells.
+I have a (pokey) Ubuntu-Mate laptop; go me!
+Installing the OpenVPN software was a matter of <code>sudo apt-get install openvpn</code> to get it.</p>
+<p>The final step was to actually connect.
+Based on <a href="http://askubuntu.com/questions/508250/openvpn-gui-client-for-udp-tcp#508296" target="_blank" rel="external">this StackOverflow post</a> the command is <code>`sudo openvpn --config ~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code> with <strong><code>~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code></strong> being the path to the config file which I copied to my laptop.
+I was able to test this by accessing my Jenkins server after tethering my laptop to my cell-phone, but your local Wetherspoon’s would be a better place to check.</p>
+<h2 id="Do-Again"><a href="#Do-Again" class="headerlink" title="Do Again"></a>Do Again</h2><p>If you’re from a dysopian future - <a href="/raw/install.pivpn.io">I’ve dumped a copy of the setup script to acompany this post.</a>
+If I find myself in a small group with need of a VPN again - I’d advocate this approach; the �35 Pi3 with a �10 microSD is a very quick solution for this work.
+Also … there’s other stuff that the little guy is probably able to do well for a SME that needs their tools to be onsite.</p>
+<p>Anyway … <a href="https://www.google.co.uk/search?q=albert+einstein+birthday" target="_blank" rel="external">Happy Birthday to me</a> I guess …</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -237,6 +310,19 @@ BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/03/02/ReHexo-2017/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ReHexo 2017</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -303,11 +389,13 @@ BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv
     var disqus_shortname = 'peterlavalle';
     
     
+    var disqus_url = 'http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
