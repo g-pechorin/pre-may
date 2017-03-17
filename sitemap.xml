@@ -4,14 +4,112 @@
   <url>
     <loc>http://peterlavalle.com/about/index.html</loc>
     
-    <lastmod>2017-03-16T22:30:24.377Z</lastmod>
+    <lastmod>2017-03-17T10:15:20.135Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/01/08/oth-PALua-Core/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/01/09/oth-Bullet/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/03/02/Hungarian-Notation/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/07/22/Mirroring-GitHub-to-BitBucket/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/01/19/New-Digs/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/</loc>
     
-    <lastmod>2017-03-16T10:15:21.988Z</lastmod>
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/11/12/PALSystem/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/04/18/Racing-Geese/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2015/10/27/First-Post/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/07/19/Hg-SubRepos/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
     
   </url>
   
@@ -23,35 +121,7 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/06/13/vBlog-001/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2017/01/08/oth-PALua-Core/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2017/01/09/oth-Bullet/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/02/26/mySpaceShips/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/1983/03/14/hello-world/</loc>
+    <loc>http://peterlavalle.com/2016/09/04/Vive-Cane/</loc>
     
     <lastmod>2017-03-14T09:33:46.652Z</lastmod>
     
@@ -65,23 +135,16 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/09/04/Vive-Cane/</loc>
+    <loc>http://peterlavalle.com/1983/03/14/hello-world/</loc>
     
     <lastmod>2017-03-14T09:33:46.652Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
+    <loc>http://peterlavalle.com/2016/02/26/mySpaceShips/</loc>
     
-    <lastmod>2017-03-14T09:33:46.642Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/03/09/Switched-Themes/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.642Z</lastmod>
+    <lastmod>2017-03-14T09:33:46.652Z</lastmod>
     
   </url>
   
@@ -107,84 +170,7 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.632Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/04/18/Racing-Geese/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.632Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/11/12/PALSystem/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.632Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/07/19/Hg-SubRepos/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/01/19/New-Digs/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/07/22/Mirroring-GitHub-to-BitBucket/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/03/02/Hungarian-Notation/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.622Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://peterlavalle.com/2016/08/11/Atom-Macros/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2015/10/27/First-Post/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</loc>
     
     <lastmod>2017-03-14T09:33:46.612Z</lastmod>
     

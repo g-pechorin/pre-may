@@ -9,22 +9,28 @@
         <meta name="keywords" content="raspberry-pi,Pi3,OpenVPN" />
     
     <meta name="description" content="Have I mentioned that I own a Pi3?
-Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
-BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+Well … this is how I use the Pi3 as an OpenVPN server to remotely work on my home network.
+This (anecdotal) post comprises
+
+a background summary of what OpenVPN does">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenVPN on a Pi3">
 <meta property="og:url" content="http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/index.html">
 <meta property="og:site_name" content="Peter's Fascinations">
 <meta property="og:description" content="Have I mentioned that I own a Pi3?
-Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
-BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+Well … this is how I use the Pi3 as an OpenVPN server to remotely work on my home network.
+This (anecdotal) post comprises
+
+a background summary of what OpenVPN does">
 <meta property="og:image" content="http://www.pivpn.io/images/pivpn_logo.png">
-<meta property="og:updated_time" content="2017-03-16T10:15:21.988Z">
+<meta property="og:updated_time" content="2017-03-17T10:15:20.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenVPN on a Pi3">
 <meta name="twitter:description" content="Have I mentioned that I own a Pi3?
-Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.
-BackgroundVirtual Private Networks (hereafter VPNs) reffer to a client-serv">
+Well … this is how I use the Pi3 as an OpenVPN server to remotely work on my home network.
+This (anecdotal) post comprises
+
+a background summary of what OpenVPN does">
 <meta name="twitter:image" content="http://www.pivpn.io/images/pivpn_logo.png">
     
 
@@ -168,17 +174,24 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Have I mentioned that I own a Pi3?</p>
-<p>Well … this is how I use the Pi3 as an OpenVPN server to play like I’m home when I’m out.</p>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Virtual Private Networks (hereafter VPNs) reffer to a client-server system where a client uses an existing network to route all of its traffice through a server.
+            <p>Have I mentioned that I own a Pi3?
+Well … this is how I use the Pi3 as an OpenVPN server to remotely work on my home network.
+This (anecdotal) post comprises</p>
+<ul>
+<li>a background summary of what OpenVPN does</li>
+<li>details of how I ran-the-script</li>
+<li>notes on what I had to do to connect</li>
+<li>speculation on when I’d want this</li>
+</ul>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Virtual Private Networks (hereafter VPNs) refer to a client-server system where a client uses an existing network to route all of its traffic through a server.
 The advantage is that, if the client is in an insecure location (Bar!) they can access resources (build servers!) that no sane person would expose to the public internet.</p>
-<p>Also; if the client is in a country with draconian laws, (or a poor NetFlic catalouge) but the server is in a more enligthened region; the setup allows someone to masquerade as being in the other location.</p>
-<p>My chief interest is in being able to access BitBucket/Jenins/GitLab/GitHub/Kallithea et al when I’m in a coffee shop.
+<p>Also; if the client is in a country with draconian laws, (or a poor NetFlix catalog) but the server is in a more enlightened region; the setup allows someone to masquerade as being in the other location.</p>
+<p>My chief interest is in being able to access BitBucket/Jenkins/GitLab/GitHub/Kallithea et al when I’m in a coffee shop.
 There’s a mountain of tweaks and voodoo that you can setup as well for this - but it’s beyond my interest in this case.</p>
 <h2 id="VPN-on-the-Pi3"><a href="#VPN-on-the-Pi3" class="headerlink" title="VPN on the Pi3"></a>VPN on the Pi3</h2><p>I have a Raspberry Pi3 with Jesse-Lite installed - so <a href="http://www.pivpn.io/" target="_blank" rel="external">I was all set for these instructions.</a>
 The script worked as described, my only deviation was sending the traffic through TCP port 80.
 (I don’t know what I’m doing, but I do know that UDP didn’t work)</p>
-<p>In the real world you should never ever ever run a script from the internet without checking it.</p>
+<p>In the real world, you should never ever run a script from the internet without checking it.</p>
 <p>Following the setup of the server software, I logged into my (podunk) router and directed the FireWall to assign port 80 to my Pi3, and to use a static IP for the Pi3.
 Pretty standard router stuff which never follows a standard UI - so I’m not posting mine here.</p>
 <h2 id="VPN-Client-on-my-Ubuntu-laptop"><a href="#VPN-Client-on-my-Ubuntu-laptop" class="headerlink" title="VPN Client on my Ubuntu laptop"></a>VPN Client on my Ubuntu laptop</h2><p>On my Pi3 - I used the new <code>pivpn add</code> command to create a new VPN … account?
@@ -188,10 +201,10 @@ I have a (pokey) Ubuntu-Mate laptop; go me!
 Installing the OpenVPN software was a matter of <code>sudo apt-get install openvpn</code> to get it.</p>
 <p>The final step was to actually connect.
 Based on <a href="http://askubuntu.com/questions/508250/openvpn-gui-client-for-udp-tcp#508296" target="_blank" rel="external">this StackOverflow post</a> the command is <code>`sudo openvpn --config ~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code> with <strong><code>~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code></strong> being the path to the config file which I copied to my laptop.
-I was able to test this by accessing my Jenkins server after tethering my laptop to my cell-phone, but your local Wetherspoon’s would be a better place to check.</p>
-<h2 id="Do-Again"><a href="#Do-Again" class="headerlink" title="Do Again"></a>Do Again</h2><p>If you’re from a dysopian future - <a href="/raw/install.pivpn.io">I’ve dumped a copy of the setup script to acompany this post.</a>
-If I find myself in a small group with need of a VPN again - I’d advocate this approach; the �35 Pi3 with a �10 microSD is a very quick solution for this work.
-Also … there’s other stuff that the little guy is probably able to do well for a SME that needs their tools to be onsite.</p>
+I was able to test this by accessing my Jenkins server after tethering my laptop to my cellular phone, but your local Wetherspoon’s would be a better place to check.</p>
+<h2 id="Do-Again"><a href="#Do-Again" class="headerlink" title="Do Again"></a>Do Again</h2><p>If you’re from a dystopian future - <a href="/raw/install.pivpn.io">I’ve dumped a copy of the setup script to accompany this post.</a>
+If I find myself in a small group with a need for a VPN again - I’d advocate this approach; the £35 Pi3 with a £10 microSD is a very quick solution for this work.
+There are probably other roles that a Pi server can fulfill for a small shop that needs their tools to be on-site.</p>
 <p>Anyway … <a href="https://www.google.co.uk/search?q=albert+einstein+birthday" target="_blank" rel="external">Happy Birthday to me</a> I guess …</p>
 
         </div>
@@ -331,7 +344,7 @@ Also … there’s other stuff that the little guy is probably able to do well f
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BulletPhysics/">BulletPhysics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GamePlay/">GamePlay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/">Hardware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MadeWithUnity/">MadeWithUnity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenVPN/">OpenVPN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pi3/">Pi3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Procedural-Generation/">Procedural Generation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpaceShips/">SpaceShips</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Template-Programming/">Template Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity/">Unity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VR/">VR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vive/">Vive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/howtos/">howtos</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humor/">humor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mercurial/">mercurial</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one-true-header/">one-true-header</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry-pi/">raspberry-pi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sorrynotsorry/">sorrynotsorry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vBlog/">vBlog</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BulletPhysics/">BulletPhysics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GamePlay/">GamePlay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/">Hardware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MadeWithUnity/">MadeWithUnity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenVPN/">OpenVPN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pi3/">Pi3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Procedural-Generation/">Procedural Generation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpaceShips/">SpaceShips</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Template-Programming/">Template Programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity/">Unity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VR/">VR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vive/">Vive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/howtos/">howtos</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humor/">humor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mercurial/">mercurial</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one-true-header/">one-true-header</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry-pi/">raspberry-pi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sorrynotsorry/">sorrynotsorry</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -357,7 +370,7 @@ Also … there’s other stuff that the little guy is probably able to do well f
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/03/">March 1983</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/03/">March 1983</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
