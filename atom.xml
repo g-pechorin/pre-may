@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Peter&#39;s Fascinations</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://peterlavalle.com/"/>
+  <updated>2017-04-10T17:30:18.384Z</updated>
+  <id>http://peterlavalle.com/</id>
+  
+  <author>
+    <name>Peter LaValle</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenVPN on a Pi3</title>
+    <link href="http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/"/>
+    <id>http://peterlavalle.com/2017/03/14/OpenVPN-on-a-Pi3/</id>
+    <published>2017-03-14T00:00:00.000Z</published>
+    <updated>2017-04-10T17:30:18.384Z</updated>
+    
+    <content type="html"><![CDATA[<p>&gt;</p>
+<blockquote>
+<p>In the wake of <a href="https://www.congress.gov/bill/115th-congress/house-joint-resolution/86" target="_blank" rel="external">H.J.Res.86</a> I’d like to point out that a VPN hosted at your house WILL NOT help you.
+These instructions show you how to browse from your home, when you’re somewhere else.
+Unless your home is outside of the USA, this does nothing to help defend you against H.J.Res.86</p>
+<p>… still useful for my work though</p>
+</blockquote>
+<p>Have I mentioned that I own a Pi3?
+Well … this is how I use the Pi3 as an OpenVPN server to remotely work on my home network.
+This (anecdotal) post comprises</p>
+<ul>
+<li>a background summary of what OpenVPN does</li>
+<li>details of how I ran-the-script</li>
+<li>notes on what I had to do to connect</li>
+<li>speculation on when I’d want this</li>
+</ul>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Virtual Private Networks (hereafter VPNs) refer to a client-server system where a client uses an existing network to route all of its traffic through a server.
+The advantage is that, if the client is in an insecure location (Bar!) they can access resources (build servers!) that no sane person would expose to the public internet.</p>
+<p>Also; if the client is in a country with draconian laws, (or a poor NetFlix catalog) but the server is in a more enlightened region; the setup allows someone to masquerade as being in the other location.</p>
+<p>My chief interest is in being able to access BitBucket/Jenkins/GitLab/GitHub/Kallithea et al when I’m in a coffee shop.
+There’s a mountain of tweaks and voodoo that you can setup as well for this - but it’s beyond my interest in this case.</p>
+<h2 id="VPN-on-the-Pi3"><a href="#VPN-on-the-Pi3" class="headerlink" title="VPN on the Pi3"></a>VPN on the Pi3</h2><p>I have a Raspberry Pi3 with Jesse-Lite installed - so <a href="http://www.pivpn.io/" target="_blank" rel="external">I was all set for these instructions.</a>
+The script worked as described, my only deviation was sending the traffic through TCP port 80.
+(I don’t know what I’m doing, but I do know that UDP didn’t work)</p>
+<p>In the real world, you should never ever run a script from the internet without checking it.</p>
+<p>Following the setup of the server software, I logged into my (podunk) router and directed the FireWall to assign port 80 to my Pi3, and to use a static IP for the Pi3.
+Pretty standard router stuff which never follows a standard UI - so I’m not posting mine here.</p>
+<h2 id="VPN-Client-on-my-Ubuntu-laptop"><a href="#VPN-Client-on-my-Ubuntu-laptop" class="headerlink" title="VPN Client on my Ubuntu laptop"></a>VPN Client on my Ubuntu laptop</h2><p>On my Pi3 - I used the new <code>pivpn add</code> command to create a new VPN … account?
+This popped out a single config file - very nice - which I copied to my laptop.</p>
+<p>Likely - there will be GUI/system-tray clients for Windows and OsX; in Linux land we use shells.
+I have a (pokey) Ubuntu-Mate laptop; go me!
+Installing the OpenVPN software was a matter of <code>sudo apt-get install openvpn</code> to get it.</p>
+<p>The final step was to actually connect.
+Based on <a href="http://askubuntu.com/questions/508250/openvpn-gui-client-for-udp-tcp#508296" target="_blank" rel="external">this StackOverflow post</a> the command is <code>`sudo openvpn --config ~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code> with <strong><code>~/ovpn/ppeters-shiny-pi3-vpn.ovpn</code></strong> being the path to the config file which I copied to my laptop.
+I was able to test this by accessing my Jenkins server after tethering my laptop to my cellular phone, but your local Wetherspoon’s would be a better place to check.</p>
+<h2 id="Do-Again"><a href="#Do-Again" class="headerlink" title="Do Again"></a>Do Again</h2><p>If you’re from a dystopian future - <a href="/raw/install.pivpn.io">I’ve dumped a copy of the setup script to accompany this post.</a>
+If I find myself in a small group with a need for a VPN again - I’d advocate this approach; the £35 Pi3 with a £10 microSD is a very quick solution for this work.
+There are probably other roles that a Pi server can fulfill for a small shop that needs their tools to be on-site.</p>
+<p>Anyway … <a href="https://www.google.co.uk/search?q=albert+einstein+birthday" target="_blank" rel="external">Happy Birthday to me</a> I guess …</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the wake of &lt;a href=&quot;https://www.congress.gov/bill/115th-congress/house-joint-resolution/86&quot; target=&quot;_blank&quot; 
+    
+    </summary>
+    
+    
+      <category term="raspberry-pi" scheme="http://peterlavalle.com/tags/raspberry-pi/"/>
+    
+      <category term="Pi3" scheme="http://peterlavalle.com/tags/Pi3/"/>
+    
+      <category term="OpenVPN" scheme="http://peterlavalle.com/tags/OpenVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ReHexo 2017</title>
+    <link href="http://peterlavalle.com/2017/03/02/ReHexo-2017/"/>
+    <id>http://peterlavalle.com/2017/03/02/ReHexo-2017/</id>
+    <published>2017-03-02T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>Due to … <a href="https://en.wiktionary.org/wiki/PEBCAK" target="_blank" rel="external">PEBCAK</a> … my Hexo blog stopped working for long enough that I recreated it.</p>
+<h2 id="Re-Creation"><a href="#Re-Creation" class="headerlink" title="Re-Creation"></a>Re-Creation</h2><p>I setup a “new” Hexo blog with the Hueman theme based on the links below;</p>
+<ul>
+<li><a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></li>
+<li><a href="https://github.com/ppoffice/hexo-theme-hueman/wiki/Installation" target="_blank" rel="external">https://github.com/ppoffice/hexo-theme-hueman/wiki/Installation</a></li>
+</ul>
+<p>… which led me to run the following commands on my workstation …</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">hexo init ./</div><div class="line">npm install</div><div class="line">rmdir /s themes\landscape</div><div class="line">git clone https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</div><div class="line"></div><div class="line">&gt;&gt; edit `_config.yaml` theme: hueman</div><div class="line">npm install -S hexo-generator-json-content</div><div class="line">copy themes\hueman\_config.yml.example themes\hueman\_config.yml</div><div class="line"></div><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>It all worked, so I then committed it (and this post) to Mercurial.</p>
+<blockquote>
+<p>There was some error about <code>hexo-generator-json-content</code> which doesn’t seem to matter</p>
+</blockquote>
+<h2 id="Import-and-Configuration"><a href="#Import-and-Configuration" class="headerlink" title="Import and Configuration"></a>Import and Configuration</h2><p>I was able to import the “old” blog content by copying it into the new blog’s folder.
+I copied all of my <code>source/</code> except <code>hello-world.md</code> - I kept the new one but added the original post-date.</p>
+<p>With non-trivial content, I started going through <a href="https://github.com/ppoffice/hexo-theme-hueman/wiki/Configuration" target="_blank" rel="external">hueman’s configuration manual</a>.
+My concerns were;</p>
+<ul>
+<li>Hueman’s menu system baffles me and doesn’t seem to do what I want (yet)</li>
+<li>Disqus reported an error but worked fine when I came back later</li>
+<li>Analytics <em>may be</em> setup … I’m not sure at the moment … likely due to a lack of traffic</li>
+</ul>
+<h2 id="Publishing"><a href="#Publishing" class="headerlink" title="Publishing"></a>Publishing</h2><p>Hexo blogs can be published to git through the <code>deploy</code> section int he top-level configuration file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:g-pechorin/g-pechorin.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>I use a Jenkins job to publish mine to GitHub pages, the Jenkins script looks like this;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd peterlavalle.com-2017/</div><div class="line">npm install</div><div class="line">npm install -S hexo-generator-json-content</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>… so … that’s all for now I guess.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Due to … &lt;a href=&quot;https://en.wiktionary.org/wiki/PEBCAK&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PEBCAK&lt;/a&gt; … my Hexo blog stopped working for lon
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub Pages Publish</title>
+    <link href="http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/"/>
+    <id>http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/</id>
+    <published>2017-01-19T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>GitHub pages allow a GitHub repository to function as a web-server thing.</p>
+<p>… whatevs …</p>
+<ol>
+<li>create a repository on GitHub<ul>
+<li>I created <code>game-SpaceShips</code> at <code>git@github.com:g-pechorin/game-SpaceShips.git</code></li>
+</ul>
+</li>
+<li><p>run these from the root;</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">rm -dfr .git</div><div class="line">git init</div><div class="line">git checkout -b gh-pages</div><div class="line">git add .</div><div class="line">git commit -m &quot;some stuffff or what&quot;</div><div class="line">git remote add origin git@github.com:g-pechorin/game-SpaceShips.git</div><div class="line">git push -f origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+<li><p>enjoy!</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GitHub pages allow a GitHub repository to function as a web-server thing.&lt;/p&gt;
+&lt;p&gt;… whatevs …&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;create a repository on GitHub&lt;u
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+      <category term="git" scheme="http://peterlavalle.com/tags/git/"/>
+    
+      <category term="GitHub" scheme="http://peterlavalle.com/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Single Header Bullet</title>
+    <link href="http://peterlavalle.com/2017/01/09/oth-Bullet/"/>
+    <id>http://peterlavalle.com/2017/01/09/oth-Bullet/</id>
+    <published>2017-01-09T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h1><p>I reduced <a href="http://bulletphysics.org/wordpress/" target="_blank" rel="external">Bullet</a> 2.83 to a single C++ header file.</p>
+<h1 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h1><p>Largely to see if I could … hey - <a href="https://www.sqlite.org/" target="_blank" rel="external">SQLite</a> say a 5% - 10% speed boost when they did this right?</p>
+<p>… oh - and to ease adoption I guess … maybe …</p>
+<h1 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h1><p>I used a slightly complicated Scala script that I’m not interested in examining again … for now …</p>
+<p>Basically; I took the <em>2.83 stripped</em> variant of Bullet and used a Scala program to digest it.
+I walked all of the files following the preprocessor <code>#include</code> commands while sprinkling <code>#line</code> directives into place to keep the line numbers correct.
+I had to force a few bits to happen in a specific order, and there were some trivial functions (two I think) that were declared twice, but I think that it worked.
+I certainly passed a “hello world” Bullet test … so it worked for my woefully inadequate testing.</p>
+<h1 id="Who"><a href="#Who" class="headerlink" title="Who?"></a>Who?</h1><p>Anyone who adheres to <a href="http://nothings.org/" target="_blank" rel="external">Sean Barret</a>‘s philosophies may be amused by this.</p>
+<h1 id="Now"><a href="#Now" class="headerlink" title="Now?"></a>Now?</h1><p>I’d like to have a smaller version of Bullet to work with.
+Smaller footprint, no serialisation, drop the aligned allocators, remove as much <code>virtual</code> as possible.</p>
+<p>… but definitely, keep the option to use <code>double</code> … cause … y’know ; <strong>VR!</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;What&quot;&gt;&lt;a href=&quot;#What&quot; class=&quot;headerlink&quot; title=&quot;What?&quot;&gt;&lt;/a&gt;What?&lt;/h1&gt;&lt;p&gt;I reduced &lt;a href=&quot;http://bulletphysics.org/wordpress/&quot; targ
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://peterlavalle.com/tags/C/"/>
+    
+      <category term="sorrynotsorry" scheme="http://peterlavalle.com/tags/sorrynotsorry/"/>
+    
+      <category term="one-true-header" scheme="http://peterlavalle.com/tags/one-true-header/"/>
+    
+      <category term="BulletPhysics" scheme="http://peterlavalle.com/tags/BulletPhysics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Peter&#39;s Awesome Lua with the Core functionality we care about</title>
+    <link href="http://peterlavalle.com/2017/01/08/oth-PALua-Core/"/>
+    <id>http://peterlavalle.com/2017/01/08/oth-PALua-Core/</id>
+    <published>2017-01-08T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="PALua-Core/out/palua-core.h">TL:DR ; results</a></p>
+<p><a href="duktape.org/">DukTape</a> is a C engine for executing <a href="https://en.wikipedia.org/wiki/ECMAScript" target="_blank" rel="external">ECMAScript 5.1ish</a>.
+(… or JavaScript or whatever we’re calling it this week)
+Notably, it’s distributed as a trio of source files to ease integration.</p>
+<p><a href="https://www.lua.org/" target="_blank" rel="external">Lua</a> is a C script engine (for the <a href="https://www.lua.org/cgi-bin/demo?hello" target="_blank" rel="external">Lua languages</a>) and is not distributed in such a nice way.
+So I spent a few hours preparing a (Python) script to <a href="PALua-Core/out/palua-core.h">repack Lua 5.3.3 into a single header</a>.
+(By the time I fix my blog posting stuff <a href="https://www.lua.org/work/#5.3.4" target="_blank" rel="external">5.3.4 will probably be out</a>)</p>
+<p>Merry (belated) Christmas!</p>
+<h1 id="Why-would-you-do-this"><a href="#Why-would-you-do-this" class="headerlink" title="Why would you do this?"></a>Why would you do this?</h1><p>Mostly to conform to <a href="">Sean Nothings Barret’s</a> constraints.</p>
+<h1 id="Who-would-care"><a href="#Who-would-care" class="headerlink" title="Who would care?"></a>Who would care?</h1><p>Anyone who wants to slap (somewhat) minimal Lua into a project and see what happens.</p>
+<h1 id="How-did-you-do-this"><a href="#How-did-you-do-this" class="headerlink" title="How did you do this?"></a>How did you do this?</h1><p>I used a <a href="PALua-Core/palua-core.py">python 3.5.1 script</a> to crack open the <code>.tar.gz</code> file, scan the Makefile, then concatenate sources as needed</p>
+<ul>
+<li>I scan for some test cases that you (obviously) won’t have - sorry</li>
+<li>You’ll need a <code>.c</code> (not <code>.cpp</code> … sorrynotsorry) file for Lua to actually compile … so there’s that.</li>
+<li>… my tests are written in <code>.cpp</code> though … as is the <a href="https://github.com/philsquared/Catch" target="_blank" rel="external">Catch unit testing framework</a> …</li>
+<li>I used a regex and POSIX line endings to get the whole thing under 1MB<ul>
+<li>so that KDiff likes it</li>
+<li>… hopefully, future updates won’t break this</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;PALua-Core/out/palua-core.h&quot;&gt;TL:DR ; results&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;duktape.org/&quot;&gt;DukTape&lt;/a&gt; is a C engine for executing &lt;a href=&quot;
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://peterlavalle.com/tags/Lua/"/>
+    
+      <category term="sorrynotsorry" scheme="http://peterlavalle.com/tags/sorrynotsorry/"/>
+    
+      <category term="one-true-header" scheme="http://peterlavalle.com/tags/one-true-header/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAL-System</title>
+    <link href="http://peterlavalle.com/2016/11/12/PALSystem/"/>
+    <id>http://peterlavalle.com/2016/11/12/PALSystem/</id>
+    <published>2016-11-12T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/L-system" target="_blank" rel="external">Lindenmayer Systems</a> allow one to specify a series of replacement rules for transforming strings.</p>
+<p>If the text is used as a series of drawing commands, including saving and restoring the cursor’s position, the technique can generate fairly interesting foliage.</p>
+<p>A scene graph offers the ability to save/restore by chaining segments together.
+I used Unity3D’s <a href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html" target="_blank" rel="external">ScriptableObject</a> to create “<a href="https://github.com/g-pechorin/PALSystem/blob/master/Plugins/PALSystemLanguage.cs" target="_blank" rel="external">Languages</a>“ with replacement rules.
+I also created “<a href="https://github.com/g-pechorin/PALSystem/blob/master/Plugins/PALSystemDictionary.cs" target="_blank" rel="external">Dictionaries</a>“ mapping symbols to segments made from <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank" rel="external">GameObject</a> <a href="https://docs.unity3d.com/Manual/Prefabs.html" target="_blank" rel="external">prefabs</a>.
+Finally, I explicitly marked a node in the segment as being the Leaf to which any successive stuff should be attached.</p>
+<p>By allowing multiple overlapping rules, I let the system show a lot of variances.
+I added “<a href="https://github.com/g-pechorin/PALSystem/blob/eee945308a0f9104c056a608bcc0638655113acc/Plugins/PALSystem.cs#L7" target="_blank" rel="external">Soar</a>“ mutilators to tweak the spawned things and show some more variance.
+By tweaking the “seed” value with the world position, I ended up with something that could use the same prefab to produce a whole forest of trees.</p>
+<p>Overall I’m happy to move forward with this as a tool for filling in my own virtual forests.
+I think that it needs some work on the “usability” and could stand to take some lessons from Unity3D’s built-in tree system.
+Seems pretty good for a Saturday afternoon bit of messing about</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/L-system&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Lindenmayer Systems&lt;/a&gt; allow one to specify a series of 
+    
+    </summary>
+    
+    
+      <category term="MadeWithUnity" scheme="http://peterlavalle.com/tags/MadeWithUnity/"/>
+    
+      <category term="Procedural Generation" scheme="http://peterlavalle.com/tags/Procedural-Generation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vive Cane</title>
+    <link href="http://peterlavalle.com/2016/09/04/Vive-Cane/"/>
+    <id>http://peterlavalle.com/2016/09/04/Vive-Cane/</id>
+    <published>2016-09-04T00:00:00.000Z</published>
+    <updated>2017-03-14T09:33:46.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’m still alive just … busy, not bloggy … maybe someday I’ll be more bloggy.
+Here’s something that kept me busy …</p>
+<p>Teleporting everywhere feels wrong, so my suggestion is to use the Vive wand like a cane.
+Two minutes feels a bit long, but here’s a video showing it off.</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/d-31tZiXJ_g" frameborder="0" allowfullscreen></iframe></div>
+<p>More or less; when you grip the/a wand - your avatar is planting a cane in the world from which you can push yourself.
+When the grip is held - I constantly offset the “foot” of the avatar and I can ensure that the wand’s (in game) position (in VR) doesn’t change.
+With two wands, you can crawl around in VR (which <a href="https://youtu.be/6hqUx2SOTAQ" target="_blank" rel="external">CryTek</a> already worked out) which opens some interesting possibilities.</p>
+<p>At this point … I don’t really have much to say about this, it is what it is - an amusing way to avoid joystick-motion sickness.
+There’s a handful of honey-dos I’d like to chase down with it but … 9-5, home made pizzas, social life, StarCraft’s Co-Op, and <a href="https://bitbucket.org/g-pechorin/dukscala/commits/all" target="_blank" rel="external">my-own build tool</a> all compete for my attention.</p>
+<p>If someone is reading this in the future - <a href="https://twitter.com/g_pechorin/status/772391785637216256" target="_blank" rel="external">reach me on Twitter</a> if you have a question or want a follow up.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I’m still alive just … busy, not bloggy … maybe someday I’ll be more bloggy.
+Here’s something that kept me busy …&lt;/p&gt;
+&lt;p&gt;Teleporting ever
+    
+    </summary>
+    
+    
+      <category term="MadeWithUnity" scheme="http://peterlavalle.com/tags/MadeWithUnity/"/>
+    
+      <category term="VR" scheme="http://peterlavalle.com/tags/VR/"/>
+    
+      <category term="Vive" scheme="http://peterlavalle.com/tags/Vive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Adding NotePad++ Macros to Atom.io</title>
+    <link href="http://peterlavalle.com/2016/08/11/Atom-Macros/"/>
+    <id>http://peterlavalle.com/2016/08/11/Atom-Macros/</id>
+    <published>2016-08-11T00:00:00.000Z</published>
+    <updated>2017-03-14T09:33:46.612Z</updated>
+    
+    <content type="html"><![CDATA[<p>I haven’t posted anything in awhile … so here’s how to get <a href="https://atom.io/" target="_blank" rel="external">Atom.io</a> to get macros that work kind-of-like NotePad++</p>
+<hr>
+<ol>
+<li><p>Install <a href="https://github.com/JunSuzukiJapan/atom-keyboard-macros" target="_blank" rel="external">atom-keyboard-macros</a> into Atom.</p>
+<blockquote>
+<p>The default keybindings did nothing for me … sorry</p>
+</blockquote>
+</li>
+<li><p>open your <code>keybindings.cson</code></p>
+<ul>
+<li>Hit <code>CTRL+,</code> &gt; click on <code>Keybindings</code> &gt; click on the blue text that says <code>your keymap file</code></li>
+</ul>
+</li>
+<li><p>paste this wodge into the bottom of your <code>keybindings.cson</code>
+<strong>PRESERVE THE INDENTATION!</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># almost NotePad++ macros for Atom.io!</div><div class="line"># based on https://github.com/JunSuzukiJapan/atom-keyboard-macros</div><div class="line">&apos;atom-text-editor&apos;:</div><div class="line">  &apos;ctrl-shift-r&apos;: &apos;atom-keyboard-macros:start_kbd_macro&apos;</div><div class="line">  &apos;ctrl-alt-r&apos;: &apos;atom-keyboard-macros:end_kbd_macro&apos;</div><div class="line">  &apos;ctrl-shift-p&apos;: &apos;atom-keyboard-macros:call_last_kbd_macro&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>there is no step 4</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I haven’t posted anything in awhile … so here’s how to get &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Atom.io&lt;/a&gt; to get m
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mirroring Git/GitHub to Hg/BitBucket</title>
+    <link href="http://peterlavalle.com/2016/07/22/Mirroring-GitHub-to-BitBucket/"/>
+    <id>http://peterlavalle.com/2016/07/22/Mirroring-GitHub-to-BitBucket/</id>
+    <published>2016-07-22T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>This seemed a lot longer when I planned it in my notebook at lunch.</p>
+<table>
+<thead>
+<tr>
+<th>GitHub user</th>
+<th>project (both sides)</th>
+<th>BitBucket user</th>
+<th>SCM</th>
+<th>Schedule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ocornut</td>
+<td>imgui</td>
+<td>g-pechorin</td>
+<td>None</td>
+<td>Periodic</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Install <a href="http://hg-git.github.io/" target="_blank" rel="external">hg-git</a><ul>
+<li>You’ll have to do this on the Jenkins server</li>
+<li>You’ll have to do it either for the Jenkins user or all</li>
+<li>I’m using an OsX machine as my host, so I was able to use <code>easy_install</code> to install <code>hg-git</code> and <code>dulwich</code></li>
+</ul>
+</li>
+<li>setup a project on GitHub</li>
+<li>create a Jenkins <strong>Freestyle project</strong> which runs periodically<ul>
+<li>Polling the SCM was <strong>NOT</strong> an option since there’s no <code>default</code> branch on GitHub<ul>
+<li>… this is a quirk of <code>hg-git</code> … I think</li>
+<li>… IIRC/YRMV - so sling me a tweet or whatever if I’m wrong</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>program the job to pull from git, push to hg, and ignore results of <code>1</code><ul>
+<li>this was only elaborate because I needed it to not fail when there were no changes<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"></div><div class="line">if [ -d &quot;imgui&quot; ]; then</div><div class="line">  echo &quot;Re-Using ImGUI&quot;</div><div class="line">  cd imgui</div><div class="line">  hg pull git+ssh://git@github.com:ocornut/imgui.git</div><div class="line">else</div><div class="line">  echo &quot;Cloning ImGUI&quot;</div><div class="line">  hg clone git+ssh://git@github.com:ocornut/imgui.git</div><div class="line">  cd imgui</div><div class="line">fi</div><div class="line"></div><div class="line">hg push -f ssh://hg@bitbucket.org/g-pechorin/imgui</div><div class="line"></div><div class="line">retcode=$?</div><div class="line"></div><div class="line">if [ $retcode -eq 0 ] || [ $retcode -eq 1 ]; then</div><div class="line">  exit 0</div><div class="line">else</div><div class="line">  exit $retcode</div><div class="line">fi</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This seemed a lot longer when I planned it in my notebook at lunch.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;GitHub user&lt;/th&gt;
+&lt;th&gt;project (both sides
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+      <category term="git" scheme="http://peterlavalle.com/tags/git/"/>
+    
+      <category term="mercurial" scheme="http://peterlavalle.com/tags/mercurial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mercurial / Hg SubRepos</title>
+    <link href="http://peterlavalle.com/2016/07/19/Hg-SubRepos/"/>
+    <id>http://peterlavalle.com/2016/07/19/Hg-SubRepos/</id>
+    <published>2016-07-19T19:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’m still trying to catch up on <em>stuff</em> following Develop.
+I’ve decided to write a post about my experience(s) switching my work over to SubRepos.</p>
+<p>I am unaware of the “reason” why they’re considered “bad.”
+Perhaps it’s a Unix thing?
+Maybe they don’t work as well as people feel that they should?</p>
+<p>Whatever</p>
+<p>I have a (secret) project called “<code>nite-nite/</code>“ in which I use and develop some public-domain headers.
+I want this public-domain stuff to be … well … public-domain and visible to all.
+Putting these into a Sub-Repository seemed appropriate, so I started by setting up <a href="https://bitbucket.org/g-pechorin/pal-public-domain/overview" target="_blank" rel="external">a separate repository</a> on BitBucket.
+Following the <a href="https://www.mercurial-scm.org/wiki/Subrepository" target="_blank" rel="external">basic usage</a> I cloned this into my existing working copy and set it up as directed;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users\peter\Desktop\nite-nite&gt;hg clone ssh://hg@bitbucket.org/g-pechorin/pal-public-domain</div><div class="line">C:\Users\peter\Desktop\nite-nite&gt;echo pal-public-domain = pal-public-domain &gt; .hgsub</div><div class="line">C:\Users\peter\Desktop\nite-nite&gt;hg add .hgsub</div></pre></td></tr></table></figure></p>
+<p>So far so good right? Well … not so much.
+The <code>push</code> command won’t work right with the setup we/I just used.</p>
+<p>The fix is simple, the file <code>.hgsub</code> looks like this …
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pal-public-domain = pal-public-domain</div></pre></td></tr></table></figure></p>
+<p>… and it needs to look like this …
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pal-public-domain = ssh://hg@bitbucket.org/g-pechorin/pal-public-domain</div></pre></td></tr></table></figure></p>
+<p>So commit/amend the previous commit and <code>push</code>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\Users\peter\Desktop\nite-nite&gt;hg commit -m &quot;added public domain stuff&quot;</div><div class="line">C:\Users\peter\Desktop\nite-nite&gt;hg push</div></pre></td></tr></table></figure></p>
+<p>I’m reasonably happy with this.
+As a bonus, I applied it to my blog and the embedded Unity project can be embedded as the source rather than a binary.
+Great, now I’ll get on with the actual work of moving those headers into the public-domain project.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I’m still trying to catch up on &lt;em&gt;stuff&lt;/em&gt; following Develop.
+I’ve decided to write a post about my experience(s) switching my work o
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+      <category term="mercurial" scheme="http://peterlavalle.com/tags/mercurial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stop Motion</title>
+    <link href="http://peterlavalle.com/2016/06/01/Stop-Motion/"/>
+    <id>http://peterlavalle.com/2016/06/01/Stop-Motion/</id>
+    <published>2016-06-01T00:00:00.000Z</published>
+    <updated>2017-03-14T09:33:46.642Z</updated>
+    
+    <content type="html"><![CDATA[<p>Mother told me to try something different.</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/NKtWPRFU_HA" frameborder="0" allowfullscreen></iframe></div>
+<p>I made a stop-motion video (mostly to see if I could) with bits I had lying around or withing a 5 minute walk.
+… also, I wanted to see if I could record “blocked out” storyboards since I’m a crap pose drawing person.</p>
+<p>I spent £2 on some pipe cleaners and a dopey phone stand.
+I took the pictures on my phone.
+I used some bluetack to help posing, pyOpenCV3 to encode the jpegs at 3 FPS, and ffmpeg to reduce the file size so that I could upload it in &lt; 40 minutes.</p>
+<blockquote>
+<p>The writeup took about 40 minutes … so maybe I didn’t save much time</p>
+</blockquote>
+<p>I think the fella could use some firmer limbs - (maybe pasta tubes?) to make animation easier.
+I went looking for used-GI-Joe toys to produce storyboards from.
+I wanted the articulated hips and joints to show things like dudes slouching.
+With firmer limbs - I’d probably get smoother results … maybe …</p>
+<p>It also might be good to have a steadier hand when taking the pictures.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Mother told me to try something different.&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/NKtWPRFU_HA&quot; frameborder
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Dual Hetero Quadro on Heaven</title>
+    <link href="http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/"/>
+    <id>http://peterlavalle.com/2016/05/12/Dual-Hetero-Quadro-on-Heaven/</id>
+    <published>2016-05-12T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>Literally the punchiest title I could come up with.
+I’ve been told that heterogeneous GPU setups are ridiculously slower than a single-GPU.
+This is largely an anecdotal shrug of “hey - a second GPU doesn’t really slow my computer down in any meaningful manner at all!”
+I’m sure that I did this all wrong and that the GPU is capable of being tweaked into a setting where this all becomes conclusively - the legwork for that isn’t interesting to me so I haven’t done it.</p>
+<p>TL: DR; A second GPU which doesn’t match up or SLI won’t give you cooties.</p>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>My workstation came with a NVidia PNY Quadro K600 GPU, which was replaced with a K620.
+I decided to put the K600 back into my computer as a secondary card and run <a href="https://unigine.com/products/benchmarks/heaven/" target="_blank" rel="external">UniGine Heaven</a> benchmark to see just how slow a third wheel makes it.
+All tests were carried out at full-screen-exclusive resolution but were otherwise using the Heaven Benchmark’s default settings for their namesake.
+Stereoscopy was disabled for the non-stereo setting, and I used <code>3d Vision</code> as UniGine’s the stereo method.
+For stereo settings, the <code>3D OpenGL Stereo</code> profile was used with <code>Stereo= Enabled</code> and <code>Display Mode= Generic Active Stereo</code>.</p>
+<h1 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h1><p>I really can’t see any reason that a consumer would use this setup - it just amused me.</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Detail Setting</th>
+<th>Stereo</th>
+<th>Score</th>
+<th>Frames Per Second</th>
+<th>Minimum FPS</th>
+<th>Maximum FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K620</td>
+<td>Extreme</td>
+<td>Yes</td>
+<td>131</td>
+<td>5.2</td>
+<td>3.5</td>
+<td>24.4</td>
+</tr>
+<tr>
+<td>K620</td>
+<td>Basic</td>
+<td>Yes</td>
+<td>269</td>
+<td>10.7</td>
+<td>5.2</td>
+<td>21.6</td>
+</tr>
+<tr>
+<td>K620</td>
+<td>Extreme</td>
+<td>No</td>
+<td>281</td>
+<td>11.2</td>
+<td>7.3</td>
+<td>22.5</td>
+</tr>
+<tr>
+<td>K620</td>
+<td>Basic</td>
+<td>No</td>
+<td>592</td>
+<td>23.5</td>
+<td>15.0</td>
+<td>42.2</td>
+</tr>
+<tr>
+<td>K620 + K600</td>
+<td>Extreme</td>
+<td>Yes</td>
+<td>131</td>
+<td>5.2</td>
+<td>3.7</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>K620 + K600</td>
+<td>Basic</td>
+<td>Yes</td>
+<td>270</td>
+<td>10.7</td>
+<td>8.2</td>
+<td>18.4</td>
+</tr>
+<tr>
+<td>K620 + K600</td>
+<td>Extreme</td>
+<td>No</td>
+<td>280</td>
+<td>11.1</td>
+<td>7.2</td>
+<td>22.0</td>
+</tr>
+<tr>
+<td>K620 + K600</td>
+<td>Basic</td>
+<td>No</td>
+<td>591</td>
+<td>23.5</td>
+<td>14.8</td>
+<td>40.5</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><p>The relation between the numbers suggests that;</p>
+<ul>
+<li>the second GPU does kind of slow it down measurably</li>
+<li>the second GPU doesn’t slow it down noticeably</li>
+<li>the Dual-GPU is a teensy bit helpful with Stereo rendering, but not quite worth the cost</li>
+<li>in a real game, I could tell the second GPU to do PhysX work and maybe see some improvement?</li>
+</ul>
+<p>I may have left some junk running on the desktop during the single-GPU tests, so the difference could be skewed a bit.
+Regardless; I’m confident that adding the second GPU to this desktop hasn’t sucked up all my PCIe lanes or something silly.</p>
+<p>Questions;</p>
+<ul>
+<li>how would this work in an AMD/NVidia mix? (Red/Green)</li>
+<li>would an x86 OS work any good/evil with x86 benchmark?</li>
+<li>would something with PhysX really be that different good/evil?</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Literally the punchiest title I could come up with.
+I’ve been told that heterogeneous GPU setups are ridiculously slower than a single-GP
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="http://peterlavalle.com/tags/Hardware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canadian Racing Geese</title>
+    <link href="http://peterlavalle.com/2016/04/18/Racing-Geese/"/>
+    <id>http://peterlavalle.com/2016/04/18/Racing-Geese/</id>
+    <published>2016-04-18T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>I have had several geese charge me - <a href="https://www.facebook.com/clickhole/videos/1686525851587674/?pnref=story" target="_blank" rel="external">this is a poor approximation</a>.</p>
+<p>I was quite young and the geese were acclimated to humans, more importantly, they knew how tasty the french fries and clam strips we carried were.
+I never had a chance, nor will I ever forget.
+Honking with a bestial hunger, the savage geese charged!
+Pursing me across the fried clam shop’s parking lot, my mother could only cackle as she scrambled for the camera.</p>
+<p>To this day - I have not returned to that shop.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I have had several geese charge me - &lt;a href=&quot;https://www.facebook.com/clickhole/videos/1686525851587674/?pnref=story&quot; target=&quot;_blank&quot; re
+    
+    </summary>
+    
+    
+      <category term="humor" scheme="http://peterlavalle.com/tags/humor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bin Plugins / Python 3.5.1</title>
+    <link href="http://peterlavalle.com/2016/04/13/binplugin-python3.5.1/"/>
+    <id>http://peterlavalle.com/2016/04/13/binplugin-python3.5.1/</id>
+    <published>2016-04-13T00:00:00.000Z</published>
+    <updated>2017-03-14T09:33:46.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>I was playing with <a href="https://docs.python.org/3/extending/extending.html" target="_blank" rel="external">Python’s binary extension</a> system and was impressed with the simplicity.
+I think that the <a href="https://docs.python.org/3/extending/building.html#building" target="_blank" rel="external">usage of setup.py</a> encourages a consistent ecosystem … as opposed to the more open conventions used by Java and CLR.</p>
+<p>(I followed the generic instructions and they worked fine on Windows 8.1 - disregard the hype/hate!)</p>
+<p><a href="https://github.com/g-pechorin/binplugin/tree/master/python-3.5.1" target="_blank" rel="external">Example on GitHub</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I was playing with &lt;a href=&quot;https://docs.python.org/3/extending/extending.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python’s binary extension&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Samon 2</title>
+    <link href="http://peterlavalle.com/2016/03/12/Samon-2/"/>
+    <id>http://peterlavalle.com/2016/03/12/Samon-2/</id>
+    <published>2016-03-12T14:22:30.000Z</published>
+    <updated>2017-03-14T09:33:46.632Z</updated>
+    
+    <content type="html"><![CDATA[<p>I wrote a whole post/blurb in one sitting!</p>
+<p>Read it <a href="/Samon-Templates/">here</a></p>
+<p>Also; <a href="http://www.lihaoyi.com/post/WhatsinaBuildTool.html" target="_blank" rel="external">Haoyi made a neat post about Build Tools</a>
+(I mentioned his work at least once and wanted to be sure I had his deets and URL correct)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I wrote a whole post/blurb in one sitting!&lt;/p&gt;
+&lt;p&gt;Read it &lt;a href=&quot;/Samon-Templates/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Also; &lt;a href=&quot;http://www.lihaoyi.c
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hungarian Notation</title>
+    <link href="http://peterlavalle.com/2016/03/02/Hungarian-Notation/"/>
+    <id>http://peterlavalle.com/2016/03/02/Hungarian-Notation/</id>
+    <published>2016-03-02T15:39:37.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>In which I pontificate on the subject of Hungarian Notation</p>
+<hr>
+<h1 id="Hungarian-Notation-is-a-contentious-topic"><a href="#Hungarian-Notation-is-a-contentious-topic" class="headerlink" title="Hungarian Notation is a contentious topic"></a>Hungarian Notation is a contentious topic</h1><p>It boils down to an ambiguity for the word “type” within English / C++.
+MicroSfot’s <a href="https://msdn.microsoft.com/library/ms229045(v=vs.100).aspx" target="_blank" rel="external">modern style-guide</a> says not to use “Abbreviations and Acronyms” or “Hungarian Notation” - originally Hungarian Notation was a style of abbreviation.
+I’m going to paraphrase a <a href="http://www.joelonsoftware.com/articles/Wrong.html" target="_blank" rel="external">long blog post by Joel on Software</a> and summarize my thoughts at the end.</p>
+<h1 id="Story-Time"><a href="#Story-Time" class="headerlink" title="Story-Time!"></a>Story-Time!</h1><p>C-family languages (C/C++, Java. C# JavaScript, Python, etc) have rather “weak” types, things like Haskell and Ada95 have strong types.
+If you define an integer in Ada95 (for example) you can give it a range of values (1 to 7) or even names (days of the week) to prevent confusion.
+So you’ll never be able to assign a day-of-the-month (1 to 31) value to a day-of-the-week (1 to 7) variable without a compiler error from Ada95.</p>
+<p>I’m going to illustrate this with an example of storing the day number as an integer.</p>
+<p>Charles Simonyi’s idea was that when you created an <code>int day;</code> to store the weekday variable you would use the name <code>int wDay;</code> to denote that the <strong>semantic type</strong> of this day integer was “week.”
+They were using “Abbreviations and Acronyms” as a sematic-type on their variables
+The IT managers who set policy didn’t understand the difference between <strong>semantic type</strong> (the meaning of the data) and <strong>storage type</strong> (the mechanical storage of the data) but knew Simonyi’s team was working better and the “type” as a prefix to their variables.
+So the convention became “thou musteth prefixth thine variable names with their types” for a long time.</p>
+<p>I think that this was before IntelliSense and CodeCompletion were practical - error checking took a long time and this misinterpreted version of Hungarian Notation did help.
+My guess would be that IntelliSense and CodeCompletion came along and the practice became a redundant chore so it was abandoned mostly.</p>
+<h1 id="Peter’s-Advice"><a href="#Peter’s-Advice" class="headerlink" title="Peter’s Advice"></a>Peter’s Advice</h1><p>To get the best of both worlds (and still look clever) name your <code>int day;</code> as <code>dayOfWeek</code> / <code>dayOfMonth</code> so that things like …</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"></div><div class="line">// day of month will be between 0 and 30 (or 1 and 31)</div><div class="line">result-&gt;dayOfMonth = weekDay;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">// &quot;day of week&quot; will be between 0 and 7</div><div class="line">// &quot;day of year&quot; will be between 0 and 365 (or 1 and 366)</div><div class="line">int dayOfWeek = (dayOfYear + 1) % 7;</div><div class="line"></div><div class="line">...</div></pre></td></tr></table></figure>
+<p>… will look more wrong and stick out when you’re debugging.</p>
+<p>Certainly better than;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// What is this?</div><div class="line">result-&gt;iDayWhichMightBeSomething = iDayWhichIsSomething;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In which I pontificate on the subject of Hungarian Notation&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;Hungarian-Notation-is-a-contentious-topic&quot;&gt;&lt;a href=&quot;#Hungari
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://peterlavalle.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Space Ships</title>
+    <link href="http://peterlavalle.com/2016/03/01/Space-Ships/"/>
+    <id>http://peterlavalle.com/2016/03/01/Space-Ships/</id>
+    <published>2016-03-01T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>Awhile ago I undertook a goofy little “game-play study” with <a href="http://peterlavalle.com/game-SpaceShips/">space ships</a>.</p>
+<p>It has <a href="http://peterlavalle.com/game-SpaceShips/">space ships</a></p>
+<p>I’m calling it <a href="http://peterlavalle.com/game-SpaceShips/">Space-Ships</a>.</p>
+<hr>
+<p>I wanted to see if 2D game-play (like <a href="https://youtu.be/s-KSHEBlsI8" target="_blank" rel="external">S.P.A.Z.</a>) could “feel” like traditional 3D. (like <a href="https://youtu.be/1NFl8Yn7guE?t=17m09s" target="_blank" rel="external">Freelancer</a>)
+To study this I built a game-play prototype with a 2.5D chase-cam in (Unity) a 3D game engine.
+I used engine’s existing rigid body simulator (PhysX) to provide a limited version of physics.
+After constraining everything to a 2D plane and fiddling with the inertia values in various ways I was happy with the flight mechanics.
+I made a doo-dad generator to setup and teardown an infinite (not quite) random set of space junk - amusingly this reduced disorientation with the slight tradeoff of vague motion sickness.
+I created some guns and a dumb AI ship that flew in circles until e saw something and started shooting at it.</p>
+<p>Even when constrained to a 2D plane, the “accurate” dynamics simulation annoyed me.
+Momentum became an obstacle when I wanted to rapidly change directions to pursue another ship.
+My I changed the ships to get a lot of “inertia” when the controls weren’t being used - take your foot off the gas and you start to slow down.
+(It wasn’t actually inertia - it was “drag” … I think the manuals call it inertia … which is going to bug me now)
+Hunting down other ships was amusing, but the core of the game-play literally felt shallow
+I think that it would work for PvP style game-play, or as a sugary layer over any game with a meta-strategy system - but I’d worry about trying to make a game out of just shooting other ships.
+The lack of height variation limits the size of ships a bit so doesn’t lend itself to sweeping space-opera drama without big triangular ships looming over the audience’s view.</p>
+<p>I don’t consider the technical aspects especially interesting - however, I’ll outline them for the purpose of self-promotion.
+The project allowed me to go nuts with extending the UnityEditor - an experience that I’m happy to repeat.
+Unity’s Editor is the real star of Unity - adding extra shiny-bits in the SceneView is relatively easy, and extending or replacing the inspectors to give each script its own special arrangement of buttons doesn’t take much thought.
+The most delightful of this was using a drop-down menu to assign <code>string</code> values (parsed from <code>ProjectSettings/Inputmanager.asset</code>) to controls that had to read from <code>Input.Get??(...)</code> - a trick that I’m surprised I haven’t seen this sort of thing in Unity proper.
+(It’s too cool to be a new discovery, though … also it relies on using <em>forced text</em> asset serialization)</p>
+<p>At a higher level - I experimented with a sort of “detached manipulator pattern” to decouple functionality without relying on inheritance.
+The spaceship’s engines and guns were <code>MonoBehaviour</code> classes with public variables to control whether they were firing or pushing or whatever.
+The player’s ship and the AI ships both had an additional <code>MonoBehaviour</code> class that grabbed these scripts and set the values as their logic needed to.
+The player (of course) set the <code>openFire</code> field to the value of <code>UnityEngine.Input.GetButton(...)</code> on <code>Update()</code>.
+The AI ship used a trigger volume pointing forwards and “fired” whenever something which could be destroyed moved into that volume.
+While the pilot scripts were coupled to the flight system, the flight systems weren’t coupled to the pilots.
+This had the unexpected benefit of making it possible to “fly by inspector” and debug things that weren’t quite right.</p>
+<p>For the moment I’m happy with this as a sort of “game-play study.”
+I’m not especially interested in carrying out more work on it at this point, but I’m not nearly as put off the idea as I would expect.
+I was able to try out various technical approaches and feel that while it’s not “done” it’s a decent RoI for the weeknights and weekend I spent on it.</p>
+<p>Maybe someday I’ll add multi-player …. or maybe I’ll try out a 2D isometric adventure.</p>
+<p>… did I mention that there are <a href="http://peterlavalle.com/game-SpaceShips/">SPACESHIPs</a>!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Awhile ago I undertook a goofy little “game-play study” with &lt;a href=&quot;http://peterlavalle.com/game-SpaceShips/&quot;&gt;space ships&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I
+    
+    </summary>
+    
+    
+      <category term="Unity" scheme="http://peterlavalle.com/tags/Unity/"/>
+    
+      <category term="GamePlay" scheme="http://peterlavalle.com/tags/GamePlay/"/>
+    
+      <category term="SpaceShips" scheme="http://peterlavalle.com/tags/SpaceShips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Automated Unity WebGL Deployment</title>
+    <link href="http://peterlavalle.com/2016/02/26/mySpaceShips/"/>
+    <id>http://peterlavalle.com/2016/02/26/mySpaceShips/</id>
+    <published>2016-02-26T00:00:00.000Z</published>
+    <updated>2017-03-14T09:33:46.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>I have an old Unity project that I haven’t looked at in awhile - <a href="http://peterlavalle.com/game-SpaceShips/">this one</a>.
+If memory serves; assembling a WebGL version is slow and boring - so I’m making my eager little Jenkins server do it.</p>
+<p>Really I’m a bit bored with <code>sbt-launch</code> malarkey and I wanted to see if I could get this rolling.
+Broadly the steps that I followed went like this;</p>
+<ol>
+<li>Install Unity (5.3.3) with WebGL modules<ul>
+<li>5.3.3’s WebGL stuff has improved since I last checked</li>
+</ul>
+</li>
+<li>Build the whole tootin thing by hand (on your workstation)<ul>
+<li>This never works on the first try - better to do it locally</li>
+<li>A custom build script was involved but many snags later <strong>it lives!</strong></li>
+</ul>
+</li>
+<li>Validate WebGL player<ul>
+<li><code>file://</code> isn’t enough boyo; you need <code>http://</code> to play your game</li>
+<li>… actually ; <a href="http://nwjs.io/" target="_blank" rel="external">NW.js</a> can open the local page as if it’s <a href="https://youtu.be/uEB45OAnixU" target="_blank" rel="external">a real-boy</a><ul>
+<li>… y’know, this suggests some interesting options with desktop applications and Unity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Build by hand (again) on the CI server<ul>
+<li>I needed to reinstall Unity5.3.3 to get the trimmings I wanted</li>
+<li>I also needed to make a build script <code>BB8ild</code> (script is below)</li>
+<li>my CI server is slow so I wanted to iron out slow problems before I started picking at it here</li>
+<li>still need to set it up for CI stuff</li>
+</ul>
+</li>
+<li>Configure Jenkins to assemble and post the project<ul>
+<li>This was more complex than I had anticipated</li>
+<li>I needed to <code>cd</code> around and run a variety of tasks (script is below)</li>
+<li>In the end - I cloned and pushed the whole site</li>
+<li>… and hoped for the best</li>
+</ul>
+</li>
+</ol>
+<h1 id="Jenkins-Task"><a href="#Jenkins-Task" class="headerlink" title="Jenkins Task"></a>Jenkins Task</h1><p>Some paths were changed for security-via-obscurity; this won’t literally work but if run line-by-line and changed as you go you’ll get there.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> mySpaceShips</div><div class="line">/Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -nographics -quit -executeMethod BB8ild.PerformBuild</div><div class="line"><span class="built_in">cd</span> build/</div><div class="line">rm -dfr peter-lavalle.github.io/</div><div class="line">hg <span class="built_in">clone</span> git+ssh://git@github.com:peter-lavalle/peter-lavalle.github.io.git</div><div class="line">rm -dfr peter-lavalle.github.io/assets/mySpaceShips/</div><div class="line">mkdir -p peter-lavalle.github.io/assets/mySpaceShips/</div><div class="line">mv ./web-gl/* ./peter-lavalle.github.io/assets/mySpaceShips</div><div class="line"><span class="built_in">cd</span> peter-lavalle.github.io/</div><div class="line">hg add .</div><div class="line">hg commit -m <span class="string">"<span class="variable">$BUILD_TAG</span>"</span></div><div class="line">hg push</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line">rm -dfr peter-lavalle.github.io/</div><div class="line">rm -dfr web-gl/</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line">rm -dfr build/</div><div class="line">rm -dfr Library/</div></pre></td></tr></table></figure>
+<h1 id="Unity-BB8ild-build-script"><a href="#Unity-BB8ild-build-script" class="headerlink" title="Unity BB8ild build script"></a>Unity <code>BB8ild</code> build script</h1><p>This’ll work as-is</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> UnityEditor;</div><div class="line"></div><div class="line"><span class="keyword">class</span> <span class="title">BB8ild</span></div><div class="line">&#123;</div><div class="line">  [MenuItem(<span class="string">"Build/Build WebGL"</span>)]</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PerformBuild</span>(<span class="params"></span>)</span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">var</span> sceneSettings = EditorBuildSettings.scenes;</div><div class="line">    <span class="keyword">string</span>[] scenePaths = <span class="keyword">new</span> <span class="keyword">string</span>[sceneSettings.Length];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; scenePaths.Length; ++i)</div><div class="line">    &#123;</div><div class="line">      scenePaths[i] = sceneSettings[i].path;</div><div class="line">    &#125;</div><div class="line">    BuildPipeline.BuildPlayer(scenePaths, <span class="string">"build/web-gl"</span>, BuildTarget.WebGL, BuildOptions.None);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I have an old Unity project that I haven’t looked at in awhile - &lt;a href=&quot;http://peterlavalle.com/game-SpaceShips/&quot;&gt;this one&lt;/a&gt;.
+If memo
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+      <category term="Jenkins" scheme="http://peterlavalle.com/tags/Jenkins/"/>
+    
+      <category term="Unity" scheme="http://peterlavalle.com/tags/Unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo and Jenkins atop Os X</title>
+    <link href="http://peterlavalle.com/2016/02/10/Hexo-Os-X/"/>
+    <id>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</id>
+    <published>2016-02-10T00:00:00.000Z</published>
+    <updated>2017-03-17T10:15:20.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>In which I ramble a bit about setting up CI for this very blog.</p>
+<p>I have a <a href="https://jenkins-ci.org/" target="_blank" rel="external">Jenkins</a> server running on my OsX computer.
+(… or … I’m setting one up anyway)
+I also have (am establishing?) a blog built by <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> … because that seems the right way to do this sort of thing.
+My constraints of “<a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown</a>“ and “no really - let me use <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">MarkDown</a> because I’m going to have a lot of code fragments” seem alien to most blogging software - “<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> delivers” as the kids say.</p>
+<p>I knew that this would all work from a command line on the computer and a command line on my Windows 7 PC.
+After a bunch of chewing - I’ve scrawled this post in victory as a sort of test.</p>
+<h1 id="NPM-setup"><a href="#NPM-setup" class="headerlink" title="NPM setup"></a>NPM setup</h1><p>Hexo is built in Node.JS.
+I installed it and played about with it as I was instructed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo</div><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
+<p>After installing Node.JS I encountered various errors and I switching to a stable version of NPM.
+(… which I thought I had already used but … I guess not)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm -g install npm</div></pre></td></tr></table></figure>
+<p>This was <a href="https://github.com/npm/npm/issues/7555" target="_blank" rel="external">discussed here</a> but may be irrelevant.</p>
+<h1 id="The-Build"><a href="#The-Build" class="headerlink" title="The Build"></a>The Build</h1><p>I setup <a href="https://jenkins-ci.org/" target="_blank" rel="external">Jenkins</a> to poll (and pull) my repository at <code>H/15 * * * *</code>.
+I had already setup a <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> site and configured it to deploy to GitHub pages.
+(… which incidentally don’t seem to do anything interesting for you with Jekyll AFAIK)</p>
+<p>The “secret” to this recipe seemed to be that the <a href="https://jenkins-ci.org/" target="_blank" rel="external">Jenkins</a> build seems to require installing  <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> itself to work.
+Not <em>just</em> <code>npm install</code> in the folder but full-on <code>npm install hexo</code> et al.
+This seems odd to me but it’s what worked … but this is a CI server so longish builds are fine with me.</p>
+<p>I used four steps, each a shell command, to perform the generation and <strong>deploy</strong> the site.</p>
+<p>The first command installs <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>.
+I tried to install it (globally?) with <code>-g</code> but encountered a security exception.
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo</div></pre></td></tr></table></figure></p>
+<p>The second command installs a sitemap plugin that should make my site reachable from Google-like crawlers
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure></p>
+<p>The third command … installs … the site?
+This may be redundant but I’m not interested in going through a <em>“change” &gt; “reboot” &gt; “check”</em> cycle to learn that I’ve broken my configuration.
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>The fourth command actually generates the site and uploads the generated site.
+It seems odd to me <code>deploy</code> doesn’t implicitly generate the site - but I can take advantage of that, see the Addendum!
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure></p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>So … yeah … that’s that.
+This post was the first one that I set to push out through this system.</p>
+<h1 id="Addendum"><a href="#Addendum" class="headerlink" title="Addendum"></a>Addendum</h1><p>So it’s been a few weeks/months and I want to stick generated HTML from somewhere else onto my site.
+But … Hexo tries to “fill in the blanks” which keeps a consistent CSS and <code>&lt;title&gt;</code> stuff … but breaks <a href="mySpaceShips">my Unity WebGL game</a>.
+To work around this, I’ve</p>
+<ul>
+<li>generated the WebGL to an <code>assets/</code> folder and committed it to the blog’s repository<ul>
+<li>an explanation of this is beyond the scope of this post … I’ll write it up another time</li>
+</ul>
+</li>
+<li>split generation and deployment into two steps</li>
+<li>copied the <code>assets/</code> folder into the blog’s <code>public/</code> folder</li>
+<li>deployed everything as normal</li>
+</ul>
+<p>The fourth step above is replaced with these three commands;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">cp -r assets/* public/</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>… and it works!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In which I ramble a bit about setting up CI for this very blog.&lt;/p&gt;
+&lt;p&gt;I have a &lt;a href=&quot;https://jenkins-ci.org/&quot; target=&quot;_blank&quot; rel=&quot;ex
+    
+    </summary>
+    
+    
+      <category term="howtos" scheme="http://peterlavalle.com/tags/howtos/"/>
+    
+      <category term="Hexo" scheme="http://peterlavalle.com/tags/Hexo/"/>
+    
+      <category term="Jenkins" scheme="http://peterlavalle.com/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>New Digs</title>
+    <link href="http://peterlavalle.com/2016/01/19/New-Digs/"/>
+    <id>http://peterlavalle.com/2016/01/19/New-Digs/</id>
+    <published>2016-01-19T20:54:04.000Z</published>
+    <updated>2017-03-17T10:15:20.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>I am experimenting with <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>.
+I do believe it’s much nicer than my old system.</p>
+<p>So far I’ve setup a basic site, a sitemap generator and it deploys to my existing GitHub pages configuration.
+Now I’m tweaking <code>themes/</code> and copying over <em>worthwhile</em> articles from previous blogs!</p>
+<p>The whole thing weighs in at 480K (or did before I added this sentence) so I’m fighting the <a href="http://idlewords.com/talks/website_obesity.htm" target="_blank" rel="external">Website Obesity Crisis</a> somewhat … right?</p>
+<p>… I pass the <a href="https://tafttest.com/" target="_blank" rel="external">Taft test</a> I think …</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I am experimenting with &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;.
+I do believe it’s much nicer than my old syst
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
