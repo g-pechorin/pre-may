@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://peterlavalle.com/about/index.html</loc>
+    
+    <lastmod>2017-04-20T10:30:16.652Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://peterlavalle.com/dot-blog/dukrow.html</loc>
     
     <lastmod>2017-04-10T21:15:23.670Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/about/index.html</loc>
+    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
     
-    <lastmod>2017-03-17T10:15:20.135Z</lastmod>
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
+    <loc>http://peterlavalle.com/2016/03/02/Hungarian-Notation/</loc>
     
     <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
@@ -59,13 +66,6 @@
   
   <url>
     <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
-    
-    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/03/02/Hungarian-Notation/</loc>
     
     <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
