@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2017/01/08/oth-PALua-Core/</loc>
+    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
     
     <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
@@ -51,28 +51,7 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2017/01/09/oth-Bullet/</loc>
-    
-    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://peterlavalle.com/2016/11/12/PALSystem/</loc>
-    
-    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2016/03/01/Space-Ships/</loc>
-    
-    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
     
     <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
@@ -86,16 +65,23 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2015/10/27/First-Post/</loc>
+    <loc>http://peterlavalle.com/2017/03/02/ReHexo-2017/</loc>
     
-    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/</loc>
+    <loc>http://peterlavalle.com/2017/01/08/oth-PALua-Core/</loc>
     
-    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/01/09/oth-Bullet/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.125Z</lastmod>
     
   </url>
   
@@ -115,6 +101,20 @@
   
   <url>
     <loc>http://peterlavalle.com/2016/02/10/Hexo-Os-X/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2017/01/19/GitHub-Pages-Publish/</loc>
+    
+    <lastmod>2017-03-17T10:15:20.115Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2015/10/27/First-Post/</loc>
     
     <lastmod>2017-03-17T10:15:20.115Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/09/04/Vive-Cane/</loc>
-    
-    <lastmod>2017-03-14T09:33:46.652Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://peterlavalle.com/2016/04/13/binplugin-python3.5.1/</loc>
     
     <lastmod>2017-03-14T09:33:46.652Z</lastmod>
@@ -156,14 +149,21 @@
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2015/11/12/Swag/</loc>
+    <loc>http://peterlavalle.com/2016/09/04/Vive-Cane/</loc>
+    
+    <lastmod>2017-03-14T09:33:46.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://peterlavalle.com/2016/06/01/Stop-Motion/</loc>
     
     <lastmod>2017-03-14T09:33:46.642Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://peterlavalle.com/2016/06/01/Stop-Motion/</loc>
+    <loc>http://peterlavalle.com/2015/11/12/Swag/</loc>
     
     <lastmod>2017-03-14T09:33:46.642Z</lastmod>
     
